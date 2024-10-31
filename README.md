@@ -1,27 +1,49 @@
 # AngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+Uses Angular 18 client .
+The backend service is present at https://github.com/SabariGanesh-K/unstoppable-service
+Certain set of seats are prebooked  to illustrate the seat searching query
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Uses local development service at port 8080 to interact
+- DB is switched to local DB dockerized through the service 
 
-## Code scaffolding
+## Development server
+- Reachable at http://booking-v1-sabari.s3-website.eu-north-1.amazonaws.com
+- Uses production   service deployed at AWS Elastic Beanstalk
+- DB is switched to production  DB present at AWS RDS for postgresql [ Can use aurora as well - but no money :( ] 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instruction to execute
+## Environment setup
+- Refer to src/app/sample_enviroment
+- Rename it to src/app/enviroment
+- There are 2 files:
+    - environment.ts = setup for development
+    - environment.prod.ts = setup for production
 
-## Build
+## Development Client
+- Ensure to setup the service backend using the api repo listed above and run it at port 8080
+- Install all dpendencies and serve the angular client [default serve is set to development]
+```bash
+npm install 
+npx ng serve
+```` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development Client
+- Ensure to setup the service backend using the api repo listed above and run it at port 8080
+- Install all dpendencies and serve the angular client [default serve is set to development]
+```bash
+npm install 
+npx ng serve
+```` 
 
-## Running unit tests
+## Production Client
+- Ensure to setup the service backend with AWS service as mentioned in production enviornment in repo above or simply use local api
+- Install all dpendencies and serve the angular client in production config
+```bash
+npm install 
+npx ng serve:configuration
+```` 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
