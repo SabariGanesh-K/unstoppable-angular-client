@@ -1,0 +1,482 @@
+
+<div class="container-fluid pt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-9 ">
+      <div class="seat_plan_wrap">
+        <div class="row">
+          <div class="">
+            <div>
+            <h6>Select Seats </h6>
+            <form  #userForm="ngForm" (ngSubmit)="submitSeats(userForm)">
+
+                <input type="number" required class="form-control form-control-sm" [(ngModel)]="userDetails.numberseats"  name="numberseats" >
+
+        <button [disabled]="(userDetails.numberseats>(80-bookedSeats.length)) || (userDetails.numberseats>7) ||(userDetails.numberseats<=0)"class="btn btn-block mt-3 btn-search btn-sm"> <i class="fas mr-2 fa-search"></i> Book Seats</button>
+
+            <!-- <button type="submit" value="Submit" (click)="submitSeats()">Submit</button> -->
+            </form>
+            
+          </div>
+          <div *ngIf="(userDetails.numberseats>(80-bookedSeats.length)) || (userDetails.numberseats>7) ||(userDetails.numberseats<=0)" class="text-danger">
+             1-7 seats allowed
+          </div>
+          <div><h4>Available seats:</h4> <h4>{{80-bookedSeats.length}}</h4></div>
+            <div class="seats">
+           
+              <div class="row1">
+                <ul>
+                  <li>
+                      <a (click)="Seat('A-1')" id="A-1" title="[A-1]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-8')" id="A-8" title="[A-8]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-15')" id="A-15" title="[A-15]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-22')" id="A-22" title="[A-22]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-29')" id="A-29" title="[A-29]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-36')" id="A-36" title="[A-36]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-43')" id="A-43" title="[A-43]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-50')" id="A-50" title="[A-50]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-57')" id="A-57" title="[A-57]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-64')" id="A-64" title="[A-64]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-71')" id="A-71" title="[A-71]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('A-78')" id="A-78" title="[A-78]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+              </ul>
+
+
+              <ul>
+                <li>
+                    <a (click)="Seat('A-2')" id="A-2" title="[A-2]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-9')" id="A-9" title="[A-9]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-16')" id="A-16" title="[A-16]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-23')" id="A-23" title="[A-23]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-30')" id="A-30" title="[A-30]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-37')" id="A-37" title="[A-37]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-44')" id="A-44" title="[A-44]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-51')" id="A-51" title="[A-51]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-58')" id="A-58" title="[A-58]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-65')" id="A-65" title="[A-65]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-72')" id="A-72" title="[A-72]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('A-79')" id="A-79" title="[A-79]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+              <li>
+                  <a (click)="Seat('A-3')" id="A-3" title="[A-3]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-10')" id="A-10" title="[A-10]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-17')" id="A-17" title="[A-17]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-24')" id="A-24" title="[A-24]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-31')" id="A-31" title="[A-31]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-38')" id="A-38" title="[A-38]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-45')" id="A-45" title="[A-45]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-52')" id="A-52" title="[A-52]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-59')" id="A-59" title="[A-59]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-66')" id="A-66" title="[A-66]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-73')" id="A-73" title="[A-73]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+              <li>
+                  <a (click)="Seat('A-80')" id="A-80" title="[A-80]">
+                      <img src="../../../assets/img/bseat.png" alt="">
+                  </a>
+              </li>
+          </ul>
+
+          <ul>
+            <li>
+                <a (click)="Seat('A-4')" id="A-4" title="[A-4]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-11')" id="A-11" title="[A-11]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-18')" id="A-18" title="[A-18]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-25')" id="A-25" title="[A-25]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-32')" id="A-32" title="[A-32]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-39')" id="A-39" title="[A-39]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-46')" id="A-46" title="[A-46]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-53')" id="A-53" title="[A-53]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-60')" id="A-60" title="[A-60]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-67')" id="A-67" title="[A-67]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a (click)="Seat('A-74')" id="A-74" title="[A-74]">
+                    <img src="../../../assets/img/bseat.png" alt="">
+                </a>
+            </li>
+           
+        </ul>
+
+              </div>
+              <div class="row1">
+
+                <ul>
+                  <li>
+                      <a (click)="Seat('B-5')" id="B-5" title="[B-5]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-12')" id="B-12" title="[B-12]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-19')" id="B-19" title="[B-19]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-26')" id="B-26" title="[B-26]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-33')" id="B-33" title="[B-33]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-40')" id="B-40" title="[B-40]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-47')" id="B-47" title="[B-47]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-54')" id="B-54" title="[B-54]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-61')" id="B-61" title="[B-61]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-68')" id="B-68" title="[B-68]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-75')" id="B-75" title="[B-75]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+              </ul>
+
+                <!-- ROW 3 COMPLETE  -->
+
+                <ul>
+                  <li>
+                      <a (click)="Seat('B-6')" id="B-6" title="[B-6]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-13')" id="B-13" title="[B-13]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-20')" id="B-20" title="[B-20]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-27')" id="B-27" title="[B-27]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-34')" id="B-34" title="[B-34]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-41')" id="B-41" title="[B-41]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-48')" id="B-48" title="[B-48]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-55')" id="B-55" title="[B-55]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-62')" id="B-62" title="[B-62]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-69')" id="B-69" title="[B-69]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+                  <li>
+                      <a (click)="Seat('B-76')" id="B-76" title="[B-76]">
+                          <img src="../../../assets/img/bseat.png" alt="">
+                      </a>
+                  </li>
+              </ul>
+
+              <ul>
+                <li>
+                    <a (click)="Seat('B-7')" id="B-7" title="[B-7]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-14')" id="B-14" title="[B-14]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-21')" id="B-21" title="[B-21]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-28')" id="B-28" title="[B-28]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-35')" id="B-35" title="[B-35]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-42')" id="B-42" title="[B-42]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-49')" id="B-49" title="[B-49]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-56')" id="B-56" title="[B-56]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-63')" id="B-63" title="[B-63]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-70')" id="B-70" title="[B-70]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a (click)="Seat('B-77')" id="B-77" title="[B-77]">
+                        <img src="../../../assets/img/bseat.png" alt="">
+                    </a>
+                </li>
+            </ul>
+
+              </div>
+             
+            </div>
+            <div *ngIf="offlineAlert"class="alert alert-danger ">You can buy only 4 seats in one time </div>
+          </div>
+          <div class="col-md-6 ">
+          <div class="seat_plan">
+            <table *ngIf="availableseats.length>0" class="table ">
+              <thead>
+                <tr>
+                  <th >Seats Booked</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let s of availableseats">
+                  <td>{{s}}</td>
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
